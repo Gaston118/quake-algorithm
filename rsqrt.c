@@ -29,7 +29,9 @@ float Q_rsqrt(float number){
 
     y = *(float *)&i;
 
-    y = y * (tresmedios - (x2 * y * y));
+    y = y * (tresmedios - (x2 * y * y)); // 1st iteration result = 0.499154
+    y = y * (tresmedios - (x2 * y * y)); // 2nd iteration result = 0.499998
+    y = y * (tresmedios - (x2 * y * y)); // 3rd iteration result = 0.500000
 
     return y;
 }
